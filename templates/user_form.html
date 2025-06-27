@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head><title>用户申请</title></head>
+<body>
+    <h2>在线申请表</h2>
+    <form method="POST">
+        姓名: <input type="text" name="name" required><br><br>
+        申请时间: <input type="text" name="application_time" required><br><br>
+        特别备注: <textarea name="remarks" required></textarea><br><br>
+        <input type="submit" value="提交申请">
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+        {% for category, message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head><title>后台数据</title></head>
+<body>
+    <h2>所有申请信息</h2>
+    <textarea rows="25" cols="80" readonly>
+{% for name, details in data.items() %}
+姓名: {{ name }}
+申请时间: {{ details.time }}
+备注: {{ details.remarks }}
+
+{% endfor %}
+    </textarea><br><br>
+    <a href="{{ url_for('export_excel') }}">📥 导出为 Excel</a>
+</body>
+</html>
